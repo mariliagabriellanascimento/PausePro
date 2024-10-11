@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>PausePro - Login</title>
+</head>
+<body>
+    <div class="app-pausepro-login-container"> 
+        <header class="cabecalho-login">
+            <nav class="nav-login">
+                <div class="logo">
+                    <a href="index.html">
+                        <img id="logo-pp" src="./img/pausepro.png" alt="Image with the title 'PausePro'">
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <main class="principal-login">
+            <div class="subprincipal-container">
+                <div class="login-container">
+                    <h1>Employee Login</h1>
+                    <form action="/login" method="post">
+                        <label for="matricula">Employee ID:</label>
+                        <input type="text" id="matricula" name="matricula" required aria-required="true" placeholder="Enter your employee ID">
+                        
+                        <label for="senha">Password:</label>
+                        <input type="password" id="senha" name="senha" required aria-required="true" placeholder="Enter your password">
+                        
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
