@@ -9,30 +9,53 @@
 <body>
     <div class="app-pausepro-login-container"> 
         <header class="cabecalho-login">
-            <nav class="nav-login">
-                <div class="logo">
-                    <a href="index.html">
-                        <img id="logo-pp" src="./img/pausepro.png" alt="Image with the title 'PausePro'">
-                    </a>
-                </div>
-            </nav>
+            <nav class="nav-login"></nav>
         </header>
         <main class="principal-login">
             <div class="subprincipal-container">
+                <div class="carrossel">
+                    <div class="carousel-interno">
+                        <div class="carrossel-item">
+                            <img class="imagens-carrossel" height="404px" src="./img/imagem_1.png" alt="Image of an employee using a notebook while another presents work on the whiteboard">
+                            <p>Empowering your workday, one check-in at a time.</p>
+                        </div>
+                        <div class="carrossel-item">
+                            <img class="imagens-carrossel" height="404px" src="./img/imagem_2.png" alt="Image of a notebook and cell phone">
+                            <p>Seamless tracking for a more productive you.</p>
+                        </div>
+                        <div class="carrossel-item">
+                            <img class="imagens-carrossel" height="404px" src="./img/imagem_3.png" alt="Employees with notebook in a meeting">
+                            <p>Stay on time, stay in control.</p>
+                        </div>
+                        <div class="carrossel-item">
+                            <img class="imagens-carrossel" height="404px" src="./img/imagem_4.png" alt="A system of beating points overtaking on a cell phone side by side">
+                            <p>Transforming attendance into efficiency.</p>
+                        </div>
+                        <div class="carrossel-item">
+                            <img class="imagens-carrossel" height="404px" src="./img/imagem_5.png" alt="Person in suit adjusting">
+                            <p>Your time matters, make every second count.</p>
+                        </div>
+                    </div>
+                    <button class="anterior" onclick="moveCarousel(-1)">&#10094;</button>
+                    <button class="proximo" onclick="moveCarousel(1)">&#10095;</button>
+                </div>
                 <div class="login-container">
+                    <div class="logopplogin">
+                        <img id="logo-pp" height="200" src="./img/pausepro1.png" alt="Image with the title 'PausePro'">
+                    </div>
                     <h1>Employee Login</h1>
-                    <form action="/login" method="post">
+                    <form action="/pags/home.html" method="post">
                         <label for="matricula">Employee ID:</label>
-                        <input type="text" id="matricula" name="matricula" required aria-required="true" placeholder="Enter your employee ID">
-                        
+                        <input type="text" id="matricula" name="matricula" required aria-required="true" placeholder="Enter your employee ID" oninvalid="this.setCustomValidity('Please fill out this field.')" oninput="this.setCustomValidity('')">
                         <label for="senha">Password:</label>
-                        <input type="password" id="senha" name="senha" required aria-required="true" placeholder="Enter your password">
-                        
+                        <input type="password" id="senha" name="senha" required aria-required="true" placeholder="Enter your password" oninvalid="this.setCustomValidity('Please fill out this field.')" oninput="this.setCustomValidity('')">
                         <button type="submit">Login</button>
                     </form>
                 </div>
             </div>
         </main>
     </div>
+    
+    <script src="js/script.js"></script>
 </body>
 </html>
