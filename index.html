@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>PausePro - Login</title>
 </head>
-<body>
+<body class="body-login">
     <div class="app-pausepro-login-container"> 
         <header class="cabecalho-login">
             <nav class="nav-login"></nav>
@@ -16,23 +17,23 @@
                 <div class="carrossel">
                     <div class="carousel-interno">
                         <div class="carrossel-item">
-                            <img class="imagens-carrossel" height="404px" src="./img/imagem_1.png" alt="Image of an employee using a notebook while another presents work on the whiteboard">
+                            <img class="imagens-carrossel" src="./img/imagem_1.png" alt="Image of an employee using a notebook while another presents work on the whiteboard">
                             <p>Empowering your workday, one check-in at a time.</p>
                         </div>
                         <div class="carrossel-item">
-                            <img class="imagens-carrossel" height="404px" src="./img/imagem_2.png" alt="Image of a notebook and cell phone">
+                            <img class="imagens-carrossel" src="./img/imagem_2.png" alt="Image of a notebook and cell phone">
                             <p>Seamless tracking for a more productive you.</p>
                         </div>
                         <div class="carrossel-item">
-                            <img class="imagens-carrossel" height="404px" src="./img/imagem_3.png" alt="Employees with notebook in a meeting">
+                            <img class="imagens-carrossel" src="./img/imagem_3.png" alt="Employees with notebook in a meeting">
                             <p>Stay on time, stay in control.</p>
                         </div>
                         <div class="carrossel-item">
-                            <img class="imagens-carrossel" height="404px" src="./img/imagem_4.png" alt="A system of beating points overtaking on a cell phone side by side">
+                            <img class="imagens-carrossel" src="./img/imagem_4.png" alt="A system of beating points overtaking on a cell phone side by side">
                             <p>Transforming attendance into efficiency.</p>
                         </div>
                         <div class="carrossel-item">
-                            <img class="imagens-carrossel" height="404px" src="./img/imagem_5.png" alt="Person in suit adjusting">
+                            <img class="imagens-carrossel" src="./img/imagem_5.png" alt="Person in suit adjusting">
                             <p>Your time matters, make every second count.</p>
                         </div>
                     </div>
@@ -45,10 +46,10 @@
                     </div>
                     <h1>Employee Login</h1>
                     <form action="/pags/home.html" method="post">
-                        <label for="matricula">Employee ID:</label>
-                        <input type="text" id="matricula" name="matricula" required aria-required="true" placeholder="Enter your employee ID" oninvalid="this.setCustomValidity('Please fill out this field.')" oninput="this.setCustomValidity('')">
-                        <label for="senha">Password:</label>
-                        <input type="password" id="senha" name="senha" required aria-required="true" placeholder="Enter your password" oninvalid="this.setCustomValidity('Please fill out this field.')" oninput="this.setCustomValidity('')">
+                        <label class="titulos-label" for="matricula">Employee ID:</label>
+                        <input class="titulos-input" type="text" id="matricula" name="matricula" required aria-required="true" placeholder="Enter your employee ID" oninvalid="this.setCustomValidity('Please fill out this field.')" oninput="this.setCustomValidity('')">
+                        <label class="titulos-label" for="senha">Password:</label>
+                        <input class="titulos-input" type="password" id="senha" name="senha" required aria-required="true" placeholder="Enter your password" oninvalid="this.setCustomValidity('Please fill out this field.')" oninput="this.setCustomValidity('')">
                         <button type="submit">Login</button>
                     </form>
                 </div>

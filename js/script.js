@@ -9,3 +9,5 @@ function moveCarousel(direction) {
     const offset = -currentIndex * 100; 
     document.querySelector('.carousel-interno').style.transform = `translateX(${offset}%)`;
 }
+
+document.body.style.fontFamily = "'Montserrat', sans-serif";

@@ -1,5 +1,5 @@
-body {
-    font-family: Arial, sans-serif;
+.body-login {
+    font-family: 'Montserrat', sans-serif !important;
     background-color: #f4f4f4;
 }
 
@@ -25,6 +25,7 @@ body {
 
 .login-container h1 {
     color: #2562E6;
+    font-size: 36px;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -59,53 +60,61 @@ body {
 }
 
 .carrossel {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
     position: relative;
     overflow: hidden;
-    margin-bottom: 20px;
-    width: 40vh;
-    height: 100%;
+    width: 60vh;
+    height: 80vh;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .carousel-interno {
     display: flex;
     transition: transform 0.5s ease;
     height: 100%;
+    
 }
 
 .carrossel-item {
-    min-width: 100%;
+    min-width: 60vh;
+    height: 80vh;
     position: relative;
+    
 }
 
 .carrossel-item img {
-    max-height: 80vh;
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     filter: brightness(0.8);
+    border-radius: 8px;
+    
 }
 
 .carrossel-item p {
     position: absolute;
-    bottom: 10%;
-    left: 40%;
+    bottom: 2%;
+    left: 35%;
     transform: translateX(-50%);
     color: white;
     text-align: left;
-    font-size: 18px;
-    background-color: #2525e6b2;
+    font-size: 16px;
+    background-color: rgba(37, 37, 230, 0.7);
     padding: 15px;
     border-radius: 4px;
-    transition: transform 0.3s;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .anterior, .proximo {
     background: #2525E6;
     color: white;
     border: none;
+    border-radius: 6px;
     padding: 10px;
     cursor: pointer;
     position: absolute;
-    border-radius: 4px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 24px;
@@ -124,6 +133,18 @@ body {
     margin-bottom: 10px;
 }
 
-.logopplogin{
+.logopplogin {
     text-align: center;
+}
+
+.imagens-carrossel {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.titulos-label {
+    font-size: 20px;
+}
+
+.titulos-input {
+    font-size: 16px;
 }
