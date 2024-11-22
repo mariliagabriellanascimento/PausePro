@@ -10,7 +10,7 @@
     height: 100vh;
 }
 
-.subprincipal-container {
+.sub-main-container {
     display: flex;
     align-items: center;
 }
@@ -59,7 +59,7 @@
     background-color: #259FE6;
 }
 
-.carrossel {
+.carousel {
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 8px;
@@ -70,30 +70,27 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.carousel-interno {
+.carousel-inner {
     display: flex;
     transition: transform 0.5s ease;
     height: 100%;
-    
 }
 
-.carrossel-item {
+.carousel-item {
     min-width: 60vh;
     height: 80vh;
     position: relative;
-    
 }
 
-.carrossel-item img {
+.carousel-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: brightness(0.8);
     border-radius: 8px;
-    
 }
 
-.carrossel-item p {
+.carousel-item p {
     position: absolute;
     bottom: 2%;
     left: 35%;
@@ -107,7 +104,7 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.anterior, .proximo {
+.previous, .next {
     background: #2525E6;
     color: white;
     border: none;
@@ -120,11 +117,11 @@
     font-size: 24px;
 }
 
-.anterior {
+.previous {
     left: 10px;
 }
 
-.proximo {
+.next {
     right: 10px;
 }
 
@@ -133,18 +130,18 @@
     margin-bottom: 10px;
 }
 
-.logopplogin {
+.login-logo {
     text-align: center;
 }
 
-.imagens-carrossel {
+.carousel-images {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.titulos-label {
+.titles-label {
     font-size: 20px;
 }
 
-.titulos-input {
+.titles-input {
     font-size: 16px;
 }
