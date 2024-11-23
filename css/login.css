@@ -59,7 +59,7 @@
     background-color: #259FE6;
 }
 
-.carousel {
+.login-carousel {
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 8px;
@@ -70,19 +70,19 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.carousel-inner {
+.login-carousel-inner {
     display: flex;
     transition: transform 0.5s ease;
     height: 100%;
 }
 
-.carousel-item {
+.login-carousel-item {
     min-width: 60vh;
     height: 80vh;
     position: relative;
 }
 
-.carousel-item img {
+.login-carousel-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -90,7 +90,7 @@
     border-radius: 8px;
 }
 
-.carousel-item p {
+.login-carousel-item p {
     position: absolute;
     bottom: 2%;
     left: 35%;
@@ -104,8 +104,8 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.previous, .next {
-    background: #2525E6;
+.login-carousel-previous, .login-carousel-next {
+    background: #152932;
     color: white;
     border: none;
     border-radius: 6px;
@@ -117,11 +117,11 @@
     font-size: 24px;
 }
 
-.previous {
+.login-carousel-previous {
     left: 10px;
 }
 
-.next {
+.login-carousel-next {
     right: 10px;
 }
 
@@ -134,7 +134,7 @@
     text-align: center;
 }
 
-.carousel-images {
+.login-carousel-images {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
