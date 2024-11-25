@@ -1,3 +1,82 @@
 .app-pausepro-relatorios-container {
     background-color: #EAEAFE;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.relatorios-conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(90vh - 60px); 
+    padding: 20px; 
+}
+
+.container-relatorios {
+    margin: 10px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    align-content: center;
+    width: 180vh;
+    height: 60vh;
+    box-shadow: 0 4px 20px #D9D9D9;
+    background-color: #FFFFFF;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 15px;
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid #D9D9D9;
+}
+
+th {
+    background-color: #FFFFFF;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+.secao-relatorio h2 {
+    margin: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.secao-relatorio h2 span {
+    font-size: 14px;
+    color: #555;
+    transition: transform 0.3s ease;
+}
+
+.tabela-horas-trabalhadas {
+    margin-bottom: 20px;
+    justify-items: center;
+} 
+
+.tabela-pausas {
+    margin-bottom: 20px;
+    justify-items: center;
+} 
+
+.tabela-faltas {
+    margin-bottom: 20px;
+    justify-items: center;
+} 
+
+.titulo-relatorios {
+    font-size: 54px;
+    font-weight: bold;
 }

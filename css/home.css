@@ -3,26 +3,25 @@
 }
 
 /* CARROSSEL HOME */
-
 .home-conteudo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: calc(90vh - 60px); 
+    min-height: calc(88vh - 60px); 
     padding: 0; 
 }
 
 .carrossel-home {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0;
     border-radius: 8px;
-    position: relative;
     overflow: hidden;
     text-align: center;
-    width: 196vh;
+    width: 180vh;
     height: 60vh;
     box-shadow: 0 4px 20px #D9D9D9;
+    background-color: #FFFFFF;
+    padding: 20px;
 }
 
 .carrossel-interno-home {
