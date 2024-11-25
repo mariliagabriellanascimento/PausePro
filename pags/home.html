@@ -10,78 +10,72 @@
 </head>
 <body>
     <div class="app-pausepro-home-container">
-        <!-- Cabeçalho -->
-        <header class="dashboard-header">
-            <div class="header-left">
+        <header class="cabecalho">
+            <div class="cabecalho-esquerda">
                 <img src="../img/logo pause pro header.svg" alt="PausePro logo" class="logo">
             </div>
-            <div class="header-center">
+            <div class="cabecalho-centro">
                 <div id="clock" class="clock" aria-live="polite">00:00:00</div>
                 <div id="ponto-status">Last punch: 08:00 AM</div>
             </div>
-            <div class="header-right">
+            <div class="cabecalho-direita">
                 <nav class="nav-menu" aria-label="Primary Navigation">
-                    <ul>
-                        <li>
-                            <a href="home.html" id="home-link" class="nav-link">Home</a>
+                    <ul class="container-nav">
+                        <li id="lista-nav">
+                            <a href="home.html" id="link-home" class="links-nav">HOME</a>
                         </li>
-                        <li>
-                            <a href="historico.html" class="nav-link">Attendance History</a>
+                        <li id="lista-nav">
+                            <a href="historico.html" class="links-nav">ATTENDANCE HISTORY</a>
                         </li>
-                        <li>
-                            <a href="relatorios.html" class="nav-link">Reports</a>
+                        <li id="lista-nav">
+                            <a href="relatorios.html" class="links-nav">REPORTS</a>
                         </li>
-                        <li class="notifications">
-                            <button class="notification-btn" aria-label="Notifications">
-                                <i class="fa fa-bell" aria-hidden="true"></i>
-                                <span id="notification-count" class="notification-count">0</span>
-                            </button>
+                        <li id="lista-nav" class="notificacoes">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi-bi-bell" viewBox="0 0 16 16">
+                                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
+                            </svg>                               
+                            <span id="contador-notificacao" class="contador-notificacao">0</span>
                         </li>
                     </ul>
                 </nav>
                 <div class="user-info" id="user-info">
-                    <p class="user-name">Maurício Gabriel</p>
-                    <p class="user-role">Front-End Developer</p>
+                    <p class="nome-profissao-usuario">Maurício Gabriel | Front-End Developer</p>
                 </div>
                 <div class="avatar-container" id="avatar-container">
                     <img src="../img/perfil-mauri.png" alt="User avatar" class="avatar">
                 </div>
             </div>
         </header>
-        
-         <!-- Botão de Idioma -->
-         <button class="language-toggle" id="languageToggle" aria-label="Toggle Language">
-            <img src="../img/world-icon.svg" alt="Change Language">
-        </button>
 
-        <!-- Conteúdo Principal -->
-        <main class="dashboard-content">
-            <!-- Carrossel -->
-            <section class="home-carousel-container">
-                <button class="home-carousel-prev" aria-label="Previous slide">&#10094;</button>
-                <div class="home-carousel">
-                    <div class="home-carousel-item active">Ponto Atual
+        <main class="home-conteudo">
+            <div class="carrossel-home">
+                <div class="carrossel-interno-home">
+                    <div class="item-carrossel-home">
                     </div>
-                    <div class="home-carousel-item">Content 2</div>
-                    <div class="home-carousel-item">Content 3</div>
-                    <div class="home-carousel-item">Week History: <br> Date: XX/XX <br> Entry: 08:00 AM <br> Exit: 05:00 PM <br> Hours Worked: 8h</div>
+                    <div class="item-carrossel-home">
+                    </div>
+                    <div class="item-carrossel-home">
+                    </div>
+                    <div class="item-carrossel-home">
+                    </div>
+                    <div class="item-carrossel-home">
+                    </div>
                 </div>
-                <button class="home-carousel-next" aria-label="Next slide">&#10095;</button>
-            </section>
+                <button class="carrossel-home-anterior" onclick="moverCarrosselHome(-1)">&#10094;</button>
+                <button class="carrossel-home-proximo" onclick="moverCarrosselHome(1)">&#10095;</button>
+            </div>
         </main>
 
-        <!-- Rodapé -->
-        <footer class="dashboard-footer">
-            <div class="footer-content">
-                <p>&copy; 2024 Time Tracking System - All rights reserved.</p>
-                <div class="footer-links">
+        <footer class="rodape">
+            <div class="conteudo-rodape">
+                <p>PausePro&copy; 2024 Time Tracking System - All rights reserved.</p>
+                <div class="links-rodape">
                     <a href="#privacy">Privacy Policy</a> |
                     <a href="#terms">Terms of Use</a>
                 </div>
                 <p>Developed by Verdinhos</p>
             </div>
         </footer>
-
     </div>
 
     <script src="../jquery-3.3.1.slim.min.js"></script>
