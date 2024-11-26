@@ -15,6 +15,7 @@
 .carrossel-home {
     margin: 10px 0;
     border-radius: 8px;
+    position: relative;
     overflow: hidden;
     text-align: center;
     width: 180vh;
