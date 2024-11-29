@@ -1,3 +1,34 @@
+//LOGIN
+document.addEventListener("DOMContentLoaded", function () {
+    const loginButton = document.getElementById("login-button");
+
+    loginButton.addEventListener("click", function () {
+        const employeeId = document.getElementById("employeeId").value;
+        const password = document.getElementById("password").value;
+
+        if (employeeId.trim() && password.trim()) {
+            window.location.href = "./pags/home.html";
+        } else {
+
+            alert("Por favor, preencha todos os campos.");
+        }
+    });
+});
+
+//PAGINAS
+document.addEventListener("DOMContentLoaded", function() {
+    const currentPath = window.location.pathname;
+
+    const navLinks = document.querySelectorAll('.nav-menu .links-nav');
+
+    navLinks.forEach(link => {
+        if (currentPath.includes(link.getAttribute('href'))) {
+            link.classList.add('active');
+        }
+    });
+});
+
+
 //RELOGIO
 function updateClock() {
     const now = new Date();
@@ -9,38 +40,40 @@ function updateClock() {
 setInterval(updateClock, 1000);
 
 //CARROSSEL LOGIN
-const carrosselLogin = document.querySelector(".carrossel-interno-login");
-const itensLogin = document.querySelectorAll(".item-carrossel-login");
-let indiceAtualCarrosselLogin = 0;
+let indiceLogin = 0;
+const carrosselItemsLogin = document.querySelectorAll('.carrossel-interno-login .item-carrossel-login');
 
-function moverCarrosselLogin() {
-    indiceAtualCarrosselLogin++;
+function moverCarrosselLogin(directionLogin) {
+    indiceLogin += directionLogin;
 
-    if (indiceAtualCarrosselLogin < 0) {
-        indiceAtualCarrosselLogin = itensLogin.length - 1;
-    } else if (indiceAtualCarrosselLogin >= itensLogin.length) {
-        indiceAtualCarrosselLogin = 0;
+    if (indiceLogin < 0) {
+        indiceLogin = carrosselItemsLogin.length - 1; 
+    } else if (indiceLogin >= carrosselItemsLogin.length) {
+        indiceLogin = 0; 
     }
 
-    carrosselLogin.style.transform = `translateX(-${indiceAtualCarrosselLogin * 100}%)`;
+    // Move o carrossel para a posição correta
+    const offset = -indiceLogin * 100; 
+    document.querySelector('.carrossel-interno-login').style.transform = `translateX(${offset}%)`;
 }
 
 //CARROSSEL HOME
-const carrosselHome = document.querySelector(".carrossel-interno-home");
-const itensHome = document.querySelectorAll(".item-carrossel-home");
-let indiceAtualCarrosselHome = 0;
+let indiceHome = 0;
+const carrosselItemsHome = document.querySelectorAll('.carrossel-interno-home .item-carrossel-home');
 
-function moverCarrosselHome() {
-    indiceAtualCarrosselHome++;
+function moverCarrosselHome(directionHome) {
+    indiceHome += directionHome;
 
-    if (indiceAtualCarrosselHome < 0) {
-        indiceAtualCarrosselHome = itensHome.length - 1;
-    } else if (indiceAtualCarrosselHome >= itensHome.length) {
-        indiceAtualCarrosselHome = 0;
+    if (indiceHome < 0) {
+        indiceHome = carrosselItemsHome.length - 1; 
+    } else if (indiceHome >= carrosselItemsHome.length) {
+        indiceHome = 0; 
     }
 
-    carrosselHome.style.transform = `translateX(-${indiceAtualCarrosselHome * 100}%)`;
+    const offset = -indiceHome * 100; 
+    document.querySelector('.carrossel-interno-home').style.transform = `translateX(${offset}%)`;
 }
+
 
 //RELATORIOS
 document.querySelectorAll('.secao-relatorio h2').forEach(function(header) {

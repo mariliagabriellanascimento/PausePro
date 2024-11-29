@@ -51,17 +51,73 @@
             <div class="carrossel-home">
                 <div class="carrossel-interno-home">
                     <div class="item-carrossel-home">
-                        <h1>Current Time Punch</h1>
+                        <h1 class="titulo-item-home">Current Time Punch</h1>
+                        <div class="ponto-status">
+                            <p><strong>Entry Time:</strong> 08:00 AM</p>
+                            <p><strong>Status:</strong> At Work</p>
+                            <p><strong>Hours Worked:</strong> <span id="horasTrabalhadas">4h 30m</span></p>
+                        </div>
+            
+                        <div class="acoes">
+                            <button id="pausarBotao" class="botao pausar">Pause</button>
+                            <button id="retomarBotao" class="botao retomar" disabled>Resume</button>
+                            <button id="finalizarBotao" class="botao finalizar" disabled>Finish</button>
+                            <button id="extraBotao" class="botao hora-extra">Overtime</button>
+                        </div>
                     </div>
                     <div class="item-carrossel-home">
-                        <h1>Hours Worked</h1>
-                        <canvas></canvas>
+                        <h1 class="titulo-item-home">Hours Worked</h1>
+                        <canvas class="grafico-home"></canvas>
                     </div>
                     <div class="item-carrossel-home">
-                        <h1>Alerts</h1>
+                        <h1 class="titulo-item-home">Alerts</h1>
                     </div>
                     <div class="item-carrossel-home">
-                        <h1>Time Punch History</h1>
+                        <h1 class="titulo-item-home">Time Punch History</h1>
+                        <div class="secao-historico-home">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Entry Time</th>
+                                        <th>Exit Time</th>
+                                        <th>Worked Hours</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <button class="carrossel-home-anterior" onclick="moverCarrosselHome(-1)">&#10094;</button>

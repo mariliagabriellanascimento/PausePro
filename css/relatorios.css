@@ -13,7 +13,6 @@
 }
 
 .container-relatorios {
-    margin: 10px 0;
     border-radius: 8px;
     overflow: hidden;
     text-align: center;
@@ -22,30 +21,13 @@
     height: 60vh;
     box-shadow: 0 4px 20px #D9D9D9;
     background-color: #FFFFFF;
-    padding: 20px;
+    padding: 0px 100px 0px 100px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-th, td {
-    padding: 15px;
-    font-size: 20px;
-    text-align: center;
-    border: 1px solid #D9D9D9;
-}
-
-th {
-    background-color: #FFFFFF;
-    font-weight: bold;
-}
-
-tr:nth-child(even) {
-    background-color: #FFFFFF;
-}
+/* .secao-relatorio {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+} */
 
 .secao-relatorio h2 {
     margin: 15px;
@@ -64,17 +46,24 @@ tr:nth-child(even) {
 .tabela-horas-trabalhadas {
     margin-bottom: 20px;
     justify-items: center;
+    display: none;
 } 
 
 .tabela-pausas {
     margin-bottom: 20px;
     justify-items: center;
+    display: none;
 } 
 
 .tabela-faltas {
     margin-bottom: 20px;
     justify-items: center;
+    display: none;
 } 
+
+.grafico-relatorios {
+    display: none;
+}
 
 .titulo-relatorios {
     font-size: 54px;

@@ -11,6 +11,8 @@
     <div class="app-pausepro-login-container"> 
         <main class="login-principal">
             <div class="sub-principal-container">
+
+                <!-- Carrossel de imagens -->
                 <div class="carrossel-login">
                     <div class="carrossel-interno-login">
                         <div class="item-carrossel-login">
@@ -37,23 +39,40 @@
                     <button class="carrossel-login-anterior" onclick="moverCarrosselLogin(-1)">&#10094;</button>
                     <button class="carrossel-login-proximo" onclick="moverCarrosselLogin(1)">&#10095;</button>
                 </div>
+
+                <!-- Área de Login -->
                 <div class="login-container">
                     <div class="login-logo">
                         <img id="logo-pp" height="200" src="./img/logo pause pro.svg" alt="Image with the title 'PausePro'">
                     </div>
                     <h1>Employee Login</h1>
-                    <form action="/pags/home.html" method="post">
+                    <form id="login-form">
                         <label class="titles-label" for="employeeId">Employee ID:</label>
-                        <input class="titles-input" type="text" id="employeeId" name="employeeId" required aria-required="true" placeholder="Enter your employee ID" oninvalid="this.setCustomValidity('Please fill out this field.')" oninput="this.setCustomValidity('')">
+                        <input 
+                            class="titles-input" 
+                            type="text" 
+                            id="employeeId" 
+                            name="employeeId" 
+                            required 
+                            placeholder="Enter your employee ID"
+                        >
                         <label class="titles-label" for="password">Password:</label>
-                        <input class="titles-input" type="password" id="password" name="password" required aria-required="true" placeholder="Enter your password" oninvalid="this.setCustomValidity('Please fill out this field.')" oninput="this.setCustomValidity('')">
-                        <button type="submit">Login</button>
+                        <input 
+                            class="titles-input" 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            required 
+                            placeholder="Enter your password"
+                        >
+                        <button type="button" id="login-button">Login</button>
                     </form>
                 </div>
             </div>
         </main>
     </div>
     
+    <!-- Dependências -->
     <script src="../jquery-3.3.1.slim.min.js"></script>
     <script src="../popper.min.js"></script>
     <script src="../bootstrap-4.1.3-dist/js/bootstrap.js"></script>

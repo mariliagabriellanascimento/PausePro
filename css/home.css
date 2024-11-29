@@ -8,34 +8,36 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: calc(88vh - 60px); 
+    min-height: calc(90vh - 60px); 
     padding: 0; 
 }
 
 .carrossel-home {
-    margin: 10px 0;
     border-radius: 8px;
-    position: relative;
     overflow: hidden;
     text-align: center;
+    align-content: center;
     width: 180vh;
     height: 60vh;
     box-shadow: 0 4px 20px #D9D9D9;
     background-color: #FFFFFF;
-    padding: 20px;
 }
 
 .carrossel-interno-home {
     background-color: #FFFFFF;
     display: flex;
+    align-items: center;
     transition: transform 0.5s ease;
     height: 100%;
 }
 
 .item-carrossel-home {
-    min-width: 196vh;
+    min-width: 100%; 
     height: 60vh;
-    position: relative;
+    object-fit: cover; 
+    align-self: center;
+    align-content: center;
+    padding: 0px 100px 0px 100px;
 }
 
 .carrossel-home-anterior, .carrossel-home-proximo {
@@ -59,3 +61,54 @@
     right: 10px;
 }
 
+.titulo-item-home {
+    font-size: 54px;
+    font-weight: bold;
+}
+
+/* PONTO ATUAL */
+
+.botao {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pausar {
+    background-color: #CC4E00;
+}
+
+.pausar:hover {
+    background-color: #B34000;
+}
+
+.retomar {
+    background-color: #2567D9;
+}
+
+.retomar:hover {
+    background-color: #252ED9;
+}
+
+.finalizar {
+    background-color: #DA2B2B; 
+}
+
+.finalizar:hover {
+    background-color:#B60202;
+}
+
+.hora-extra {
+    background-color: #5625D9;
+}
+
+.hora-extra:hover {
+    background-color: #4b1db4;
+}
+
+#extraBotao {
+    display: none;
+}

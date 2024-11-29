@@ -137,11 +137,39 @@ a {
     border-radius: 50%;
 }
 
-/* RODAPE */
+/* TABELAS */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
 
+th {
+    padding: 0px 5px 0px 5px;
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid #D9D9D9;
+}
+td {
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid #D9D9D9;
+}
+
+th {
+    background-color: #FFFFFF;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+/* RODAPE */
 .rodape {
     background-color: #152932;
-    padding: 20px;
+    padding: 10px;
     color: #FFFFFF;
     text-align: center;
     position: fixed; 
@@ -150,28 +178,17 @@ a {
     width: 100%;
 }
 
-.links-rodape {
-    font-size: 0.9rem;
-    margin-top: 10px;
-}
-
 .links-rodape a {
     color: #FFFFFF;
     text-decoration: none;
     margin: 0 6px;
+    font-size: 1rem;
 }
 
 .links-rodape a:hover {
     color: #25D8D9;
 }
 
-.links-rodape {
-    margin-top: 15px;
-    font-size: 1rem;
+.rodape p {
+    margin: 5px;
 }
-
-.links-rodape a {
-    font-size: 1rem;
-    margin: 0 10px;
-}
-
