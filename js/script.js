@@ -7,13 +7,45 @@ document.addEventListener("DOMContentLoaded", function () {
         const password = document.getElementById("password").value;
 
         if (employeeId.trim() && password.trim()) {
-            window.location.href = "./pags/home.html";
+            window.location.href = "./pags/logado.html";
         } else {
 
-            alert("Por favor, preencha todos os campos.");
+            alert("Please fill in all the fields.");
         }
     });
 });
+
+//FACIAL
+document.getElementById("iniciar-facial").addEventListener("click", function() {
+    const video = document.getElementById("video-feed");
+    const faceStatus = document.getElementById("status-facial");
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function(stream) {
+            video.srcObject = stream;
+            faceStatus.innerHTML = "Waiting for facial recognition...";
+
+            setTimeout(function() {
+                faceStatus.innerHTML = "Clock in successful!";
+            }, 5000);
+        })
+        .catch(function(error) {
+            faceStatus.innerHTML = "Error accessing the camera. Please try again.";
+            console.log(error);
+        });
+});
+
+//BIOMETRIA
+document.getElementById("iniciar-biometria").addEventListener("click", function() {
+    const biometricStatus = document.getElementById("status-biometria");
+    biometricStatus.innerHTML = "Waiting for biometric scan...";
+
+    setTimeout(function() {
+        biometricStatus.innerHTML = "Clock in successful!";
+    }, 3000); 
+});
+   
+
 
 //PAGINAS
 document.addEventListener("DOMContentLoaded", function() {

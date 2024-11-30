@@ -1,0 +1,60 @@
+.app-pausepro-verificacao-container {
+    background-color: #152932;
+}
+
+.container-verificacao {
+    display: grid;
+    max-width: 1400px;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+}
+
+#reconhecimento-facial {
+    margin: 20px;
+}
+
+#reconhecimento-biometrico {
+    margin: 20px;
+}
+
+.titulo-facial-biometria {
+    margin-top: 20px;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 48px;
+    text-align: center;
+}
+
+.titulo-facial {
+    color: #FFFFFF;
+}
+
+.titulo-biometria {
+    color: #FFFFFF;
+}
+
+.comentarioFacial {
+    color: #FFFFFF;
+}
+
+.comentarioBiometria {
+    color: #FFFFFF;
+}
+
+.botaoVerificar {
+    display: block;
+    font-weight: bold;
+    padding: 15px;
+    background-color: #008A29;
+    color: #FFFFFF;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.botaoVerificar:hover {
+    background-color: #006F1E;
+}

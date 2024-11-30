@@ -67,8 +67,7 @@
 }
 
 /* PONTO ATUAL */
-
-.botao {
+.botaoPonto {
     padding: 10px 20px;
     color: #FFFFFF;
     border: none;
@@ -111,3 +110,46 @@
 #extraBotao {
     display: none;
 }
+
+/* ALERTAS */
+.alerta {
+    text-align: center; 
+    color: #FFFFFF; 
+    font-size: 24px; 
+    font-weight: 500;
+    width: 400px; 
+    height: 45px;
+    padding: 10px;
+    left: 600px;
+    position: absolute; 
+    border-radius: 5px; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+    display: inline-flex;
+}
+
+.ponto {
+    top: 94px; 
+    background: #008A29; 
+}
+
+.pausa {
+    top: 149px; 
+    background: #CC4E00; 
+}
+
+.retoma { 
+    top: 204px; 
+    background: #2567D9; 
+}
+
+ .finaliza {
+    top: 259px;
+    background: #B60202;
+ }
+
+ .extra {
+    top: 314px;
+    background: #5625D9;
+ }

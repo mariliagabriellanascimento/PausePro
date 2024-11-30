@@ -55,14 +55,14 @@
                         <div class="ponto-status">
                             <p><strong>Entry Time:</strong> 08:00 AM</p>
                             <p><strong>Status:</strong> At Work</p>
-                            <p><strong>Hours Worked:</strong> <span id="horasTrabalhadas">4h 30m</span></p>
+                            <p><strong>Hours Worked:</strong><span id="horasTrabalhadas">4h 30m</span></p>
                         </div>
             
                         <div class="acoes">
-                            <button id="pausarBotao" class="botao pausar">Pause</button>
-                            <button id="retomarBotao" class="botao retomar" disabled>Resume</button>
-                            <button id="finalizarBotao" class="botao finalizar" disabled>Finish</button>
-                            <button id="extraBotao" class="botao hora-extra">Overtime</button>
+                            <button id="pausarBotao" class="botaoPonto pausar">Pause</button>
+                            <button id="retomarBotao" class="botaoPonto retomar" disabled>Resume</button>
+                            <button id="finalizarBotao" class="botaoPonto finalizar" disabled>Finish</button>
+                            <button id="extraBotao" class="botaoPonto hora-extra">Overtime</button>
                         </div>
                     </div>
                     <div class="item-carrossel-home">
@@ -71,6 +71,13 @@
                     </div>
                     <div class="item-carrossel-home">
                         <h1 class="titulo-item-home">Alerts</h1>
+                        <div class="alertas">
+                            <div class="alert ponto">You punched in at 8:00</div>
+                            <div class="alerta pausa">You punched out for a break at 12:00</div>
+                            <div class="alerta retoma">You punched back in at 13:30</div>
+                            <div class="alerta finaliza">You punched out at 17:30</div>
+                            <div class="alerta extra">You started overtime at 17:30</div>
+                        </div>
                     </div>
                     <div class="item-carrossel-home">
                         <h1 class="titulo-item-home">Time Punch History</h1>
