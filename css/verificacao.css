@@ -1,5 +1,17 @@
 .app-pausepro-verificacao-container {
     background-color: #152932;
+    height: 100vh; 
+    overflow: hidden;
+}
+
+.verificacao-conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;      
+    align-self: center;
+    height: 100vh;
+    padding: 0;
 }
 
 .container-verificacao {
@@ -46,7 +58,7 @@
     display: block;
     font-weight: bold;
     padding: 15px;
-    background-color: #008A29;
+    background-color: #008929;
     color: #FFFFFF;
     text-align: center;
     border: none;

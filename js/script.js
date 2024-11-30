@@ -15,6 +15,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+//MODAL INCIAR
+let modalConfirmado = false;
+
+document.getElementById("botaoIniciar").addEventListener("click", function() {
+    $('#modalIniciar').modal('show');
+});
+
+document.getElementById("confirmarIniciar").addEventListener("click", function() {
+    modalConfirmado = true;
+    $('#modalIniciar').modal('hide');
+});
+
+$('#modalIniciar').on('hidden.bs.modal', function () {
+    if (modalConfirmado) {
+        window.location.href = "verificacao.html"; 
+    }
+});
+
 //FACIAL
 document.getElementById("iniciar-facial").addEventListener("click", function() {
     const video = document.getElementById("video-feed");
@@ -45,8 +63,6 @@ document.getElementById("iniciar-biometria").addEventListener("click", function(
     }, 3000); 
 });
    
-
-
 //PAGINAS
 document.addEventListener("DOMContentLoaded", function() {
     const currentPath = window.location.pathname;
