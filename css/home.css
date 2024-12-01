@@ -121,7 +121,7 @@
     height: 45px;
     padding: 10px;
     left: 600px;
-    position: absolute; 
+    position: relative; 
     border-radius: 5px; 
     justify-content: center; 
     align-items: center; 

@@ -55,14 +55,97 @@
                         <div class="ponto-status">
                             <p><strong>Entry Time:</strong> 08:00 AM</p>
                             <p><strong>Status:</strong> At Work</p>
-                            <p><strong>Hours Worked:</strong><span id="horasTrabalhadas">4h 30m</span></p>
+                            <p><strong>Hours Worked:</strong> <span id="horasTrabalhadas">4h 30m</span></p>
                         </div>
             
                         <div class="acoes">
                             <button id="pausarBotao" class="botaoPonto pausar">Pause</button>
+
+                            <div class="modal" tabindex="-1" role="dialog" id="modalPausar">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Confirm Pause</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Are you sure you want to pause your workday?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="botaoModal cancelar" data-dismiss="modal">Cancel</button>
+                                            <button type="button" class="botaoModal confirmar" id="confirmarPausar">Yes, Pause</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <button id="retomarBotao" class="botaoPonto retomar" disabled>Resume</button>
+
+                            <div class="modal" tabindex="-1" role="dialog" id="modalRetomar">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Confirm Resume</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Are you sure you want to resume your workday?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="botaoModal cancelar" data-dismiss="modal">Cancel</button>
+                                            <button type="button" class="botaoModal confirmar" id="confirmarRetomar">Yes, Resume</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <button id="finalizarBotao" class="botaoPonto finalizar" disabled>Finish</button>
+                            
+                            <div class="modal" tabindex="-1" role="dialog" id="modalFinalizar">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Confirm End of Day</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Are you sure you want to end your workday?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="botaoModal cancelar" data-dismiss="modal">Cancel</button>
+                                            <button type="button" class="botaoModal confirmar" id="confirmarFinalizar">Yes, Finish</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <button id="extraBotao" class="botaoPonto hora-extra">Overtime</button>
+
+                            <div class="modal" tabindex="-1" role="dialog" id="modalExtra">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Confirm Overtime</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Are you sure you want to start overtime?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="botaoModal cancelar" data-dismiss="modal">Cancel</button>
+                                            <button type="button" class="botaoModal confirmar" id="confirmarExtra">Yes, Start Overtime</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="item-carrossel-home">

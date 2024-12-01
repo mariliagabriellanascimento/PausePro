@@ -70,3 +70,43 @@
 .botaoVerificar:hover {
     background-color: #006F1E;
 }
+
+/* Responsividade para telas médias (tablets e dispositivos menores) */
+@media (max-width: 1024px) {
+    .container-verificacao {
+        grid-template-columns: 1fr; /* Altera para uma única coluna */
+        gap: 15px;
+    }
+
+    .titulo-facial-biometria {
+        font-size: 36px; /* Reduz o tamanho da fonte */
+    }
+
+    .botaoVerificar {
+        padding: 12px; /* Ajusta o botão para caber melhor */
+        font-size: 16px;
+    }
+}
+
+/* Responsividade para telas pequenas (smartphones) */
+@media (max-width: 600px) {
+    .verificacao-conteudo {
+        padding: 0 10px; /* Ajusta espaçamento lateral */
+    }
+
+    .titulo-facial-biometria {
+        font-size: 24px; /* Fonte menor */
+        margin-top: 10px;
+    }
+
+    #reconhecimento-facial,
+    #reconhecimento-biometrico {
+        margin: 10px;
+    }
+
+    .botaoVerificar {
+        font-size: 14px; /* Botão menor */
+        padding: 10px;
+        margin: 10px;
+    }
+}

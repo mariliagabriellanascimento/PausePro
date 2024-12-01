@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+//MODAIS
 //MODAL INCIAR
 let modalConfirmado = false;
 
@@ -33,6 +34,72 @@ $('#modalIniciar').on('hidden.bs.modal', function () {
     }
 });
 
+//MODAL PAUSAR
+document.getElementById("pausarBotao").addEventListener("click", function() {
+    $('#modalPausar').modal('show');
+});
+
+document.getElementById("confirmarPausar").addEventListener("click", function() {
+    modalConfirmado = true;
+    $('#modalPausar').modal('hide');
+
+    document.getElementById("pausarBotao").disabled = true;
+    document.getElementById("retomarBotao").disabled = false;
+});
+
+//MODAL RETOMAR
+document.getElementById("retomarBotao").addEventListener("click", function() {
+    $('#modalRetomar').modal('show');
+});
+
+document.getElementById("confirmarRetomar").addEventListener("click", function() {
+    modalConfirmado = true;
+    $('#modalRetomar').modal('hide');
+
+    document.getElementById("retomarBotao").disabled = true;
+    document.getElementById("pausarBotao").disabled = false;
+});
+
+//MODAL FINALIZAR
+document.getElementById("finalizarBotao").addEventListener("click", function() {
+    $('#modalFinalizar').modal('show');
+});
+
+document.getElementById("confirmarFinalizar").addEventListener("click", function() {
+    modalConfirmado = true;
+    $('#modalFinalizar').modal('hide');
+
+    document.getElementById("finalizarBotao").disabled = true;
+    
+});
+
+//MODAL EXTRA
+document.getElementById("extraBotao").addEventListener("click", function() {
+    $('#modalExtra').modal('show');
+});
+
+document.getElementById("confirmarExtra").addEventListener("click", function() {
+    modalConfirmado = true;
+    $('#modalExtra').modal('hide');
+    
+    document.getElementById("extraBotao").disabled = true;
+   
+});
+
+//ATIVACAO E DESATIVACAO DO BOTAO FINALIZAR
+function checkFinalizarButton() {
+    const horasTrabalhadas = document.getElementById("horasTrabalhadas").innerText;
+    if (parseInt(horasTrabalhadas.split("h")[0]) >= 8) {
+        document.getElementById("finalizarBotao").disabled = false;
+    } else {
+        document.getElementById("finalizarBotao").disabled = true;
+    }
+}
+
+//ATUALIZANDO AS HORAS DO TRABALHO
+document.addEventListener("DOMContentLoaded", checkFinalizarButton);
+setInterval(checkFinalizarButton, 60000); // Verifica a cada minuto
+
 //FACIAL
 document.getElementById("iniciar-facial").addEventListener("click", function() {
     const video = document.getElementById("video-feed");
@@ -44,7 +111,7 @@ document.getElementById("iniciar-facial").addEventListener("click", function() {
             faceStatus.innerHTML = "Waiting for facial recognition...";
 
             setTimeout(function() {
-                faceStatus.innerHTML = "Clock in successful!";
+                faceStatus.innerHTML = "Punch in successful!";
             }, 5000);
         })
         .catch(function(error) {
@@ -76,7 +143,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
 //RELOGIO
 function updateClock() {
     const now = new Date();
@@ -91,8 +157,8 @@ setInterval(updateClock, 1000);
 let indiceLogin = 0;
 const carrosselItemsLogin = document.querySelectorAll('.carrossel-interno-login .item-carrossel-login');
 
-function moverCarrosselLogin(directionLogin) {
-    indiceLogin += directionLogin;
+function moverCarrosselLogin(direcaoLogin) {
+    indiceLogin += direcaoLogin;
 
     if (indiceLogin < 0) {
         indiceLogin = carrosselItemsLogin.length - 1; 
@@ -100,7 +166,6 @@ function moverCarrosselLogin(directionLogin) {
         indiceLogin = 0; 
     }
 
-    // Move o carrossel para a posição correta
     const offset = -indiceLogin * 100; 
     document.querySelector('.carrossel-interno-login').style.transform = `translateX(${offset}%)`;
 }
@@ -109,8 +174,8 @@ function moverCarrosselLogin(directionLogin) {
 let indiceHome = 0;
 const carrosselItemsHome = document.querySelectorAll('.carrossel-interno-home .item-carrossel-home');
 
-function moverCarrosselHome(directionHome) {
-    indiceHome += directionHome;
+function moverCarrosselHome(direcaoHome) {
+    indiceHome += direcaoHome;
 
     if (indiceHome < 0) {
         indiceHome = carrosselItemsHome.length - 1; 
@@ -121,7 +186,6 @@ function moverCarrosselHome(directionHome) {
     const offset = -indiceHome * 100; 
     document.querySelector('.carrossel-interno-home').style.transform = `translateX(${offset}%)`;
 }
-
 
 //RELATORIOS
 document.querySelectorAll('.secao-relatorio h2').forEach(function(header) {
