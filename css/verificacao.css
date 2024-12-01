@@ -72,7 +72,6 @@
     background-color: #006F1E;
 }
 
-/* RESPOSIVIDADE */
 /* Responsividade para telas médias (tablets e dispositivos menores) */
 @media (max-width: 1024px) {
     .container-verificacao {
