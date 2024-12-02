@@ -1,208 +1,261 @@
-//LOGIN
 document.addEventListener("DOMContentLoaded", function () {
-    const loginButton = document.getElementById("login-button");
 
-    loginButton.addEventListener("click", function () {
-        const employeeId = document.getElementById("employeeId").value;
-        const password = document.getElementById("password").value;
-
+    //LOGIN
+    const botaoLogin = document.querySelector("#botaoLogar");
+    function logar() {
+        const employeeId = document.querySelector("#employeeId").value;
+        const password = document.querySelector("#password").value;
+        
         if (employeeId.trim() && password.trim()) {
             window.location.href = "./pags/logado.html";
         } else {
-
-            alert("Please fill in all the fields.");
+            alert("Please fill in all fields.");
         }
-    });
-});
-
-//MODAIS
-//MODAL INCIAR
-let modalConfirmado = false;
-
-document.getElementById("botaoIniciar").addEventListener("click", function() {
-    $('#modalIniciar').modal('show');
-});
-
-document.getElementById("confirmarIniciar").addEventListener("click", function() {
-    modalConfirmado = true;
-    $('#modalIniciar').modal('hide');
-});
-
-$('#modalIniciar').on('hidden.bs.modal', function () {
-    if (modalConfirmado) {
-        window.location.href = "verificacao.html"; 
     }
-});
 
-//MODAL PAUSAR
-document.getElementById("pausarBotao").addEventListener("click", function() {
-    $('#modalPausar').modal('show');
-});
-
-document.getElementById("confirmarPausar").addEventListener("click", function() {
-    modalConfirmado = true;
-    $('#modalPausar').modal('hide');
-
-    document.getElementById("pausarBotao").disabled = true;
-    document.getElementById("retomarBotao").disabled = false;
-});
-
-//MODAL RETOMAR
-document.getElementById("retomarBotao").addEventListener("click", function() {
-    $('#modalRetomar').modal('show');
-});
-
-document.getElementById("confirmarRetomar").addEventListener("click", function() {
-    modalConfirmado = true;
-    $('#modalRetomar').modal('hide');
-
-    document.getElementById("retomarBotao").disabled = true;
-    document.getElementById("pausarBotao").disabled = false;
-});
-
-//MODAL FINALIZAR
-document.getElementById("finalizarBotao").addEventListener("click", function() {
-    $('#modalFinalizar').modal('show');
-});
-
-document.getElementById("confirmarFinalizar").addEventListener("click", function() {
-    modalConfirmado = true;
-    $('#modalFinalizar').modal('hide');
-
-    document.getElementById("finalizarBotao").disabled = true;
-    
-});
-
-//MODAL EXTRA
-document.getElementById("extraBotao").addEventListener("click", function() {
-    $('#modalExtra').modal('show');
-});
-
-document.getElementById("confirmarExtra").addEventListener("click", function() {
-    modalConfirmado = true;
-    $('#modalExtra').modal('hide');
-    
-    document.getElementById("extraBotao").disabled = true;
-   
-});
-
-//ATIVACAO E DESATIVACAO DO BOTAO FINALIZAR
-function checkFinalizarButton() {
-    const horasTrabalhadas = document.getElementById("horasTrabalhadas").innerText;
-    if (parseInt(horasTrabalhadas.split("h")[0]) >= 8) {
-        document.getElementById("finalizarBotao").disabled = false;
-    } else {
-        document.getElementById("finalizarBotao").disabled = true;
+    if (botaoLogin) {
+        botaoLogin.addEventListener("click", logar);
     }
-}
 
-//ATUALIZANDO AS HORAS DO TRABALHO
-document.addEventListener("DOMContentLoaded", checkFinalizarButton);
-setInterval(checkFinalizarButton, 60000); // Verifica a cada minuto
+    //CARROSSEL LOGIN
+    const carrosselLogin = document.querySelector(".carrossel-interno-login");
+    const itensLogin = document.querySelectorAll(".item-carrossel-login");
+    let indiceAtualCarrosselLogin = 0;
+    
+    function moverCarrosselLogin() {
+        itensLogin.forEach(item => item.style.display = 'none');
+    
+        itensLogin[indiceAtualCarrosselLogin].style.display = 'block';
+    }
+    
+    const botaoAnteriorLogin = document.querySelector(".carrossel-login-anterior");
+    const botaoProximoLogin = document.querySelector(".carrossel-login-proximo");
+    
+    if (botaoAnteriorLogin && botaoProximoLogin) {
+        botaoAnteriorLogin.addEventListener("click", () => {
 
-//FACIAL
-document.getElementById("iniciar-facial").addEventListener("click", function() {
-    const video = document.getElementById("video-feed");
-    const faceStatus = document.getElementById("status-facial");
-
-    navigator.mediaDevices.getUserMedia({ video: true })
-        .then(function(stream) {
-            video.srcObject = stream;
-            faceStatus.innerHTML = "Waiting for facial recognition...";
-
-            setTimeout(function() {
-                faceStatus.innerHTML = "Punch in successful!";
-            }, 5000);
-        })
-        .catch(function(error) {
-            faceStatus.innerHTML = "Error accessing the camera. Please try again.";
-            console.log(error);
+            indiceAtualCarrosselLogin--;
+            if (indiceAtualCarrosselLogin < 0) {
+                indiceAtualCarrosselLogin = itensLogin.length - 1;
+            }
+            moverCarrosselLogin();
         });
-});
+    
+        botaoProximoLogin.addEventListener("click", () => {
 
-//BIOMETRIA
-document.getElementById("iniciar-biometria").addEventListener("click", function() {
-    const biometricStatus = document.getElementById("status-biometria");
-    biometricStatus.innerHTML = "Waiting for biometric scan...";
+            indiceAtualCarrosselLogin++;
+            if (indiceAtualCarrosselLogin >= itensLogin.length) {
+                indiceAtualCarrosselLogin = 0; 
+            }
+            moverCarrosselLogin();
+        });
+    }
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        moverCarrosselLogin(); 
+    });
+    
+    //RELOGIOS
+    function updateClock() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+    
+        if (document.querySelector('#clockLogado')) {
+            document.querySelector('#clockLogado').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+    
+        if (document.querySelector('#clockDashboard')) {
+            document.querySelector('#clockDashboard').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+    }
+    
+    setInterval(updateClock, 1000);
 
-    setTimeout(function() {
-        biometricStatus.innerHTML = "Clock in successful!";
-    }, 3000); 
-});
-   
-//PAGINAS
-document.addEventListener("DOMContentLoaded", function() {
+    //LINKS
     const currentPath = window.location.pathname;
-
     const navLinks = document.querySelectorAll('.nav-menu .links-nav');
-
     navLinks.forEach(link => {
         if (currentPath.includes(link.getAttribute('href'))) {
             link.classList.add('active');
         }
     });
-});
 
-//RELOGIO
-function updateClock() {
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-    document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
-}
-setInterval(updateClock, 1000);
-
-//CARROSSEL LOGIN
-let indiceLogin = 0;
-const carrosselItemsLogin = document.querySelectorAll('.carrossel-interno-login .item-carrossel-login');
-
-function moverCarrosselLogin(direcaoLogin) {
-    indiceLogin += direcaoLogin;
-
-    if (indiceLogin < 0) {
-        indiceLogin = carrosselItemsLogin.length - 1; 
-    } else if (indiceLogin >= carrosselItemsLogin.length) {
-        indiceLogin = 0; 
+    // MODAIS
+    // MODAL INICIAR
+    function abrirModalInicio() {
+        document.getElementById("modalIniciar").style.display = "block";
     }
 
-    const offset = -indiceLogin * 100; 
-    document.querySelector('.carrossel-interno-login').style.transform = `translateX(${offset}%)`;
-}
-
-//CARROSSEL HOME
-let indiceHome = 0;
-const carrosselItemsHome = document.querySelectorAll('.carrossel-interno-home .item-carrossel-home');
-
-function moverCarrosselHome(direcaoHome) {
-    indiceHome += direcaoHome;
-
-    if (indiceHome < 0) {
-        indiceHome = carrosselItemsHome.length - 1; 
-    } else if (indiceHome >= carrosselItemsHome.length) {
-        indiceHome = 0; 
+    function fecharModalInicio() {
+        document.getElementById("modalIniciar").style.display = "none";
     }
 
-    const offset = -indiceHome * 100; 
-    document.querySelector('.carrossel-interno-home').style.transform = `translateX(${offset}%)`;
-}
+    function confirmarIniciar() {
+        window.location.href = "verificacao.html";
+    }
 
-//RELATORIOS
-document.querySelectorAll('.secao-relatorio h2').forEach(function(header) {
-    header.addEventListener('click', function() {
-        const table = header.nextElementSibling;
+    document.getElementById("botaoIniciar")?.addEventListener("click", abrirModalInicio);
+    document.getElementById("cancelarIniciar")?.addEventListener("click", fecharModalInicio);
+    document.querySelector(".closeIniciar")?.addEventListener("click", fecharModalInicio);
+    document.getElementById("confirmarIniciar")?.addEventListener("click", confirmarIniciar);
 
-        if (table.style.display === 'none' || table.style.display === '') {
-            table.style.display = 'block';
+    // MODAL PAUSAR
+    function abrirModalPausar() {
+        document.getElementById("modalPausar").style.display = "block";
+    }
+
+    function fecharModalPausar() {
+        document.getElementById("modalPausar").style.display = "none";
+    }
+
+    function confirmarPausar() {
+        pausaAtiva = true;
+        
+        document.getElementById("botaoPausar").disabled = true;
+        document.getElementById("botaoRetomar").disabled = false;
+
+        fecharModalPausar();
+    }
+
+    document.getElementById("botaoPausar")?.addEventListener("click", abrirModalPausar);
+    document.getElementById("cancelarPausar")?.addEventListener("click", fecharModalPausar);
+    document.querySelector(".closePausar")?.addEventListener("click", fecharModalPausar);
+    document.getElementById("confirmarPausar")?.addEventListener("click", confirmarPausar);
+
+    // MODAL RETOMAR
+    function abrirModalRetomar() {
+        document.getElementById("modalRetomar").style.display = "block";
+    }
+
+    function fecharModalRetomar() {
+        document.getElementById("modalRetomar").style.display = "none";
+    }
+
+    function confirmarRetomar() {
+        pausaAtiva = false;
+        
+        document.getElementById("botaoPausar").disabled = false;
+        document.getElementById("botaoRetomar").disabled = true;
+
+        fecharModalRetomar();
+    }
+
+    document.getElementById("botaoRetomar")?.addEventListener("click", abrirModalRetomar);
+    document.getElementById("cancelarRetomar")?.addEventListener("click", fecharModalRetomar);
+    document.querySelector(".closeRetomar")?.addEventListener("click", fecharModalRetomar);
+    document.getElementById("confirmarRetomar")?.addEventListener("click", confirmarRetomar);
+
+    // MODAL FINALIZAR
+    function abrirModalFinalizar() {
+        document.getElementById("modalFinalizar").style.display = "block";
+    }
+
+    function fecharModalFinalizar() {
+        document.getElementById("modalFinalizar").style.display = "none";
+    }
+
+    function confirmarFinalizar() {
+        window.location.href = "verificacao.html";
+    }
+
+    document.getElementById("botaoFinalizar")?.addEventListener("click", abrirModalFinalizar);
+    document.getElementById("cancelarFinalizar")?.addEventListener("click", fecharModalFinalizar);
+    document.querySelector(".closeFinalizar")?.addEventListener("click", fecharModalFinalizar);
+    document.getElementById("confirmarFinalizar")?.addEventListener("click", confirmarFinalizar);
+
+    // MODAL EXTRA
+    function abrirModalExtra() {
+        document.getElementById("modalExtra").style.display = "block";
+    }
+
+    function fecharModalExtra() {
+        document.getElementById("modalExtra").style.display = "none";
+    }
+
+    function confirmarExtra() {
+        // Implementar ação de confirmar se necessário
+    }
+
+    document.getElementById("botaoExtra")?.addEventListener("click", abrirModalExtra);
+    document.getElementById("cancelarExtra")?.addEventListener("click", fecharModalExtra);
+    document.querySelector(".closeExtra")?.addEventListener("click", fecharModalExtra);
+    document.getElementById("confirmarExtra")?.addEventListener("click", confirmarExtra);
+
+
+
+    //RELATORIOS
+    document.querySelectorAll('.secao-relatorio h2').forEach(function (header) {
+        header.addEventListener('click', function () {
+            const table = header.nextElementSibling;
+            const arrow = header.querySelector('span');
+    
+            document.querySelectorAll('.secao-relatorio .tabela-horas-trabalhadas, .secao-relatorio .tabela-pausas, .secao-relatorio .tabela-faltas').forEach(function (otherTable) {
+                if (otherTable !== table) {
+                    otherTable.style.display = 'none';
+                    const otherArrow = otherTable.previousElementSibling.querySelector('span');
+                    otherArrow.innerHTML = '&#9662';
+                }
+            });
+    
+            if (table.style.display === 'block') {
+                table.style.display = 'none';
+                arrow.innerHTML = '&#9662';
+            } else {
+                table.style.display = 'block';
+                arrow.innerHTML = '&#9652';
+            }
+        });
+    });
+    
+
+    //TRADUCOES
+    //LOGIN
+    function translateToPortuguese() {
+        // Aqui você troca o conteúdo de textos para português
+        document.querySelector('h1').textContent = 'Login do Funcionário';  // Exemplo
+        document.querySelector('label[for="employeeId"]').textContent = 'ID do Funcionário:';
+        document.querySelector('label[for="password"]').textContent = 'Senha:';
+        document.querySelector('button#botaoLogar').textContent = 'Entrar';
+        // Adicione as traduções para o restante do conteúdo
+    }
+    
+    function translateToEnglish() {
+        // Aqui você troca o conteúdo de textos para inglês
+        document.querySelector('h1').textContent = 'Employee Login';  // Exemplo
+        document.querySelector('label[for="employeeId"]').textContent = 'Employee ID:';
+        document.querySelector('label[for="password"]').textContent = 'Password:';
+        document.querySelector('button#botaoLogar').textContent = 'Login';
+        // Adicione as traduções para o restante do conteúdo
+    }
+
+    
+    //TRADUTOR
+    const botaoTradutor = document.getElementById('tradutor');
+    let atualLinguagem = 'en';
+    botaoTradutor.addEventListener('click', () => {
+        if (atualLinguagem === 'en') {
+            atualLinguagem = 'pt';
+            document.documentElement.lang = 'pt';
+            translateToPortuguese();
         } else {
-            table.style.display = 'none';
-        }
-
-        const arrow = header.querySelector('span');
-        if (table.style.display === 'block') {
-            arrow.innerHTML = '&#9652';
-        } else {
-            arrow.innerHTML = '&#9662';
+            atualLinguagem = 'en';
+            document.documentElement.lang = 'en';
+            translateToEnglish();
         }
     });
+
+    // //MENU HAMBURGUER
+    // const hamburgerMenu = document.getElementById('hamburger-menu');
+    // const linksdaNav = document.querySelectorAll('.links-nav');
+
+    // hamburgerMenu.addEventListener('click', () => {
+    //     hamburgerMenu.classList.toggle('open');
+    //     linksdaNav.classList.toggle('open');
+    // });
+
 });
+
+
+

@@ -79,3 +79,16 @@
 .confirmar:hover {
     background-color: #006F1E;
 }
+
+.closeIniciar {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000000;
+    text-shadow: 0 1px 0 #FFFFFF;
+    opacity: .5;
+    height: 30px;
+    width: 30px;
+}
+

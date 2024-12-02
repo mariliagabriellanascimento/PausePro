@@ -1,18 +1,18 @@
 .app-pausepro-home-container {
     background-color: #EAEAFE;
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* CARROSSEL HOME */
 .home-conteudo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: calc(90vh - 60px); 
-    padding: 0; 
+    padding: 20px; 
 }
 
-.carrossel-home {
+.container-home {
     border-radius: 8px;
     overflow: hidden;
     text-align: center;
@@ -21,58 +21,43 @@
     height: 60vh;
     box-shadow: 0 4px 20px #D9D9D9;
     background-color: #FFFFFF;
-}
-
-.carrossel-interno-home {
-    background-color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    transition: transform 0.5s ease;
-    height: 100%;
-}
-
-.item-carrossel-home {
-    min-width: 100%; 
-    height: 60vh;
-    object-fit: cover; 
-    align-self: center;
-    align-content: center;
     padding: 0px 100px 0px 100px;
 }
 
-.carrossel-home-anterior, .carrossel-home-proximo {
-    background: #152932;
-    color:#FFFFFF;
-    border: none;
-    border-radius: 6px;
-    padding: 10px;
+.secao-home h2 {
+    margin: 15px;
     cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.carrossel-home-anterior {
-    left: 10px;
-}
-
-.carrossel-home-proximo {
-    right: 10px;
-}
-
-.titulo-item-home {
+.titulo-home {
     font-size: 54px;
     font-weight: bold;
 }
 
+
 /* PONTO ATUAL */
+/* BOTÕES */
 .botaoPonto {
     padding: 10px 20px;
     color: #FFFFFF;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.botaoDesativado {
+    background-color: #D9D9D9;
+    color: #FFFFFF;
+    cursor: not-allowed;
+}
+
+.botaoPonto:disabled {
+    background-color: #D9D9D9;
+    color: #FFFFFF;
+    cursor: not-allowed;
 }
 
 .pausar {
@@ -111,7 +96,21 @@
     display: none;
 }
 
-/* ALERTAS */
+/* MODAIS */
+.closePausar {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000000;
+    text-shadow: 0 1px 0 #FFFFFF;
+    opacity: .5;
+    height: 30px;
+    width: 30px;
+}
+
+
+/* ALERTAS
 .alerta {
     text-align: center; 
     color: #FFFFFF; 
@@ -152,4 +151,4 @@
  .extra {
     top: 314px;
     background: #5625D9;
- }
+ } */
