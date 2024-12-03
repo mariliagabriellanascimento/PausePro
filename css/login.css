@@ -154,13 +154,18 @@
     font-size: 16px;
 }
 
-#tradutor {
+#tradutorLogin {
     position: absolute;
     top: 16px;
     left: 20px;
     cursor: pointer;
     z-index: 1000;
 }
+
+#tradutorLogin:hover {
+    transform: scale(1.1);
+}
+
 
 /* Responsividade: Ajustes para telas menores */
 
@@ -234,7 +239,7 @@
         max-width: 250px;
     }
 
-    #tradutor {
+    #tradutorLogin {
         position: fixed;   
         top: 20px; 
         left: 50%;

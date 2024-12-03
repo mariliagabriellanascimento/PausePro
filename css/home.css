@@ -37,7 +37,6 @@
     font-weight: bold;
 }
 
-
 /* PONTO ATUAL */
 /* BOTÕES */
 .botaoPonto {
@@ -109,46 +108,147 @@
     width: 30px;
 }
 
-
-/* ALERTAS
-.alerta {
-    text-align: center; 
-    color: #FFFFFF; 
-    font-size: 24px; 
-    font-weight: 500;
-    width: 400px; 
-    height: 45px;
-    padding: 10px;
-    left: 600px;
-    position: relative; 
-    border-radius: 5px; 
-    justify-content: center; 
-    align-items: center; 
-    gap: 10px; 
-    display: inline-flex;
+.closeFinalizar {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000000;
+    text-shadow: 0 1px 0 #FFFFFF;
+    opacity: .5;
+    height: 30px;
+    width: 30px;
 }
 
-.ponto {
-    top: 94px; 
-    background: #008A29; 
+.closeExtra {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000000;
+    text-shadow: 0 1px 0 #FFFFFF;
+    opacity: .5;
+    height: 30px;
+    width: 30px;
 }
 
-.pausa {
-    top: 149px; 
-    background: #CC4E00; 
+/* TRADUTOR */
+
+#estiloTradutorDashboardHome {
+    position: absolute;
+    top: 130px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #152932;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
 }
 
-.retoma { 
-    top: 204px; 
-    background: #2567D9; 
+#tradutordashboardHome {
+    width: 28px; 
+    height: 28px;
+    color: #FFFFFF;
 }
 
- .finaliza {
-    top: 259px;
-    background: #B60202;
- }
+/* Ajustes responsivos para telas menores */
+@media (max-width: 768px) {
+    .container-home {
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto;
+        padding: 0 16px;
+        box-sizing: border-box;
+    }
 
- .extra {
-    top: 314px;
-    background: #5625D9;
- } */
+    .titulo-home {
+        font-size: 36px;
+    }
+
+    .secao-home h2 {
+        font-size: 20px;
+    }
+
+    .botaoPonto {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    /* Rodapé menor */
+    footer {
+        height: 105px;
+        font-size: 12px;
+        padding: 5px;
+        background-color: #FFFFFF;
+        text-align: center;
+    }
+    
+    .acoes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .botaoPonto {
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        transition: background-color 0.3s;
+    }
+
+    .botaoPonto:disabled {
+        background-color: #ccc; 
+        cursor: not-allowed;
+    }
+
+    .botaoPonto:hover:enabled {
+        background-color: #0056b3; 
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cabecalho {
+        flex-wrap: wrap;
+        
+    }
+
+    .cabecalho-esquerda .logo,
+    .user-info {
+        display: none;
+    }
+
+    .cabecalho-centro {
+        flex-grow: 1;
+        order: 1;
+    }
+
+    .avatar-container {
+        order: 2;
+        margin-left: auto;
+    }
+
+    .navbar-toggler {
+        order: 0;
+        margin-right: auto;
+        background-color:#D9D9D9;
+        
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+        
+    }
+}

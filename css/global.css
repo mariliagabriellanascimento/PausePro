@@ -4,6 +4,14 @@
     font-family: 'Montserrat';
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+
 /* CABECALHO */
 
 .cabecalho {
@@ -137,6 +145,10 @@ a {
     border-radius: 50%;
 }
 
+li {
+    text-decoration: none !important;
+}
+
 /* MODAL NOTIFICACOES */
 
 #modalNotificacoes .modal-content {
@@ -167,13 +179,11 @@ a {
     color: #777777;
 }
 
-/* Estilo da mensagem no corpo do modal */
 #modalNotificacoes #notificacoes {
     font-size: 1.3em;
-    color: #007bff; /* Cor da mensagem */
+    color: #2567D9;
     margin-top: 20px;
 }
-
 
 /* TABELAS */
 
@@ -241,25 +251,3 @@ tr:nth-child(even) {
     font-size: 14px;
 }
 
-/* TRADUTOR */
-
-#estiloTradutorDashboard {
-    position: absolute;
-    top: 130px;
-    left: 20px;
-    width: 60px;
-    height: 60px;
-    background-color: #152932;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-#tradutordashboard {
-    width: 28px; 
-    height: 28px;
-    color: #FFFFFF;
-}

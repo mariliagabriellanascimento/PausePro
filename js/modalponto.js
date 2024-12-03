@@ -1,11 +1,12 @@
 // MODAIS
 // MODAL INICIAR
 
-// function atualizarContador() {
-//     const contador = document.getElementById("contador-notificacao");
-//     let valorAtual = parseInt(contador.textContent);
-//     contador.textContent = valorAtual + 1;
-// }
+function atualizarContador() {
+    const contador = document.getElementById("contador-notificacao");
+    let valorAtual = parseInt(contador.textContent);
+    if (isNaN(valorAtual)) valorAtual = 0;
+    contador.textContent = valorAtual + 1;
+}
 
 function abrirModalInicio() {
     document.getElementById("modalIniciar").style.display = "block";
@@ -16,8 +17,8 @@ function fecharModalInicio() {
 }
 
 function confirmarIniciar() {
-    //atualizarContador();
     window.location.href = "verificacao.html";
+   
 }
 
 document.getElementById("botaoIniciar")?.addEventListener("click", abrirModalInicio);
@@ -35,7 +36,7 @@ function fecharModalPausar() {
 }
 
 function confirmarPausar() {
-    //atualizarContador();
+    atualizarContador();
     pausaAtiva = true;
     
     document.getElementById("botaoPausar").disabled = true;
@@ -59,7 +60,7 @@ function fecharModalRetomar() {
 }
 
 function confirmarRetomar() {
-    //atualizarContador();
+    atualizarContador();
     pausaAtiva = false;
     
     document.getElementById("botaoPausar").disabled = false;
@@ -101,7 +102,7 @@ function fecharModalExtra() {
 }
 
 function confirmarExtra() {
-    //atualizarContador();
+    atualizarContador();
     // Implementar ação de confirmar se necessário
 }
 
@@ -109,4 +110,3 @@ document.getElementById("botaoExtra")?.addEventListener("click", abrirModalExtra
 document.getElementById("cancelarExtra")?.addEventListener("click", fecharModalExtra);
 document.querySelector(".closeExtra")?.addEventListener("click", fecharModalExtra);
 document.getElementById("confirmarExtra")?.addEventListener("click", confirmarExtra);
-

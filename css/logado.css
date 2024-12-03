@@ -92,3 +92,16 @@
     width: 30px;
 }
 
+/* TRADUTOR */
+
+#tradutorLogado {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#tradutorLogado:hover {
+    transform: scale(1.1);
+}

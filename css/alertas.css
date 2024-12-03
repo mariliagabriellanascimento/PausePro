@@ -1,0 +1,106 @@
+.app-pausepro-alertas-container {
+  background-color: #EAEAFE;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.alertas-conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(90vh - 60px); 
+  padding: 20px; 
+}
+
+.container-alertas {
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  align-content: center;
+  width: 180vh;
+  height: 60vh;
+  box-shadow: 0 4px 20px #D9D9D9;
+  background-color: #FFFFFF;
+  padding: 0px 100px 0px 100px;
+}
+
+.secao-alertas h2 {
+  margin: 15px;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.secao-alertas h2 span {
+  font-size: 14px;
+  color: #000000;
+  transition: transform 0.3s ease;
+}
+
+.titulo-alertas {
+  font-size: 54px;
+  font-weight: bold;
+}
+
+/* ALERTAS */
+.alerta {
+  padding: 15px;
+  margin-bottom: 15px;  
+  border-radius: 8px;
+  font-size: 16px;
+  color: #FFFFFF; 
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px #D9D9D9;
+}
+
+.alerta .icone {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.alerta-ponto {
+  background: #008A29;
+}
+
+.alerta-pausa {
+  background: #CC4E00;
+}
+
+.alerta-retoma {
+  background: #2567D9;
+}
+
+.alerta-finaliza {
+  background: #B60202;
+}
+
+.alerta-extra {
+  background: #5625D9;
+}
+
+/* TRADUTOR */
+
+#estiloTradutorDashboardAlertas {
+  position: absolute;
+  top: 130px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #152932;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#tradutordashboardAlertas {
+  width: 28px; 
+  height: 28px;
+  color: #FFFFFF;
+}
