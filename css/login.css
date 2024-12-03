@@ -154,6 +154,14 @@
     font-size: 16px;
 }
 
+#tradutor {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
 /* Responsividade: Ajustes para telas menores */
 
 /* Para telas de tablet (largura menor que 768px) */
@@ -182,22 +190,22 @@
 
     .carrossel-login {
         width: 80vw;
-        height: 60vh; /* Ajustando para tela menor */
+        height: 60vh; 
     }
 
     .carrossel-login-anterior,
     .carrossel-login-proximo {
-        font-size: 20px; /* Font menor para telas médias */
-        padding: 8px; /* Ajuste de padding */
+        font-size: 20px;
+        padding: 8px;
     }
 
     .item-carrossel-login {
-        min-width: 80vw; /* Mantém o carrossel proporcional */
+        min-width: 80vw;
         height: 60vh;
     }
 
     #logo-pp {
-        max-width: 150px; /* Reduz a largura máxima em telas menores */
+        max-width: 150px;
     }
 }
 
@@ -205,9 +213,8 @@
 @media (max-width: 460px) {
     .login-container {
         padding: 18px;
-        max-width: 300px; /* Garante que a largura da login-container ocupe a tela inteira */
+        max-width: 300px;
         box-sizing: border-box;
-        
     }
 
     .login-container h1 {
@@ -221,15 +228,21 @@
 
     .carrossel-login {
         display: none;
-        /* Ajustando o carrossel para telas menores */
     }
 
     #logo-pp {
-        max-width: 250px; /* Reduz ainda mais a largura máxima em telas muito pequenas */
+        max-width: 250px;
+    }
+
+    #tradutor {
+        position: fixed;   
+        top: 20px; 
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
     }
 
 }
-
 
 /* Para telas grandes (acima de 1024px) */
 @media (min-width: 1024px) {

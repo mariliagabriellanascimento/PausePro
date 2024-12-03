@@ -24,11 +24,6 @@
     padding: 0px 100px 0px 100px;
 }
 
-/* .secao-relatorio {
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-} */
-
 .secao-relatorio h2 {
     margin: 15px;
     cursor: pointer;
