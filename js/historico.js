@@ -21,6 +21,7 @@ function translateToPortugueseHistorico() {
   document.querySelectorAll('.links-rodape a')[0].textContent = 'Política de Privacidade';
   document.querySelectorAll('.links-rodape a')[1].textContent = 'Termos de Uso';
   document.querySelector('.conteudo-rodape p:nth-child(3)').textContent = 'Desenvolvido por Verdinhos';
+  localStorage.setItem('language', 'pt');
 
 }
 
@@ -46,22 +47,30 @@ function translateToEnglishHistorico() {
   document.querySelectorAll('.links-rodape a')[0].textContent = 'Privacy Policy';
   document.querySelectorAll('.links-rodape a')[1].textContent = 'Terms of Use';
   document.querySelector('.conteudo-rodape p:nth-child(3)').textContent = 'Developed by Verdinhos';
+  localStorage.setItem('language', 'en');
+
 }
 
 //TRADUTOR HISTORICO
-const translationButton = document.getElementById('tradutordashboardHistorico');
-let currentLanguageHistorico = 'en';
+const botaoTradutorHistorico = document.getElementById('tradutordashboardHistorico');
+let atualLinguagemHistorico = localStorage.getItem('language') || 'en';
+
+if (atualLinguagemHistorico === 'pt') {
+  translateToPortugueseHistorico();
+} else {
+  translateToEnglishHistorico();
+}
 
 function traduzirHistorico() {
-  if (currentLanguageHistorico === 'en') {
-      currentLanguageHistorico = 'pt';
+  if (atualLinguagemHistorico === 'en') {
+    atualLinguagemHistorico = 'pt';
       document.documentElement.lang = 'pt';
       translateToPortugueseHistorico();
   } else {
-      currentLanguageHistorico = 'en';
+    atualLinguagemHistorico = 'en';
       document.documentElement.lang = 'en';
       translateToEnglishHistorico();
   }
 }
 
-translationButton.addEventListener('click', traduzirHistorico);
+botaoTradutorHistorico.addEventListener('click', traduzirHistorico);

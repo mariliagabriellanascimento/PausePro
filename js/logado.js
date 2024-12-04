@@ -6,6 +6,7 @@ function translateToPortugueseLogado() {
   document.querySelector('div.modal-body p').textContent = 'Tem certeza de que deseja iniciar sua jornada de trabalho?';
   document.querySelector('button#cancelarIniciar').textContent = 'Cancelar';
   document.querySelector('button#confirmarIniciar').textContent = 'Sim, Iniciar Jornada de Trabalho';
+  localStorage.setItem('language', 'pt');
 }
 
 function translateToEnglishLogado() {
@@ -15,11 +16,18 @@ function translateToEnglishLogado() {
   document.querySelector('div.modal-body p').textContent = 'Are you sure you want to start your workday?';
   document.querySelector('button#cancelarIniciar').textContent = 'Cancel';
   document.querySelector('button#confirmarIniciar').textContent = 'Yes, Start Workday';
+  localStorage.setItem('language', 'en'); 
 }
 
 //TRADUTOR LOGADO
 const botaoTradutorLogado = document.getElementById('tradutorLogado');
-let atualLinguagemLogado = 'en';
+let atualLinguagemLogado = localStorage.getItem('language') || 'en';
+
+if (atualLinguagemLogado === 'pt') {
+  translateToPortugueseLogado();
+} else {
+  translateToEnglishLogado();
+}
 
 function traduzirLogado() {
   if (atualLinguagemLogado === 'en') {
@@ -31,6 +39,6 @@ function traduzirLogado() {
       document.documentElement.lang = 'en';
       translateToEnglishLogado();
   }
-};
+}
 
 botaoTradutorLogado.addEventListener('click', traduzirLogado);

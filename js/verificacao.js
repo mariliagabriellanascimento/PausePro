@@ -4,6 +4,7 @@ function translateToPortugueseVerificacao() {
   document.querySelector('.titulo-facial').textContent = 'Verificação Facial';
   document.querySelector('.comentarioFacial').textContent = 'Posicione-se em frente à câmera para fazer o ponto.';
   document.querySelector('#iniciarFacial').textContent = 'Iniciar Reconhecimento Facial';
+  localStorage.setItem('language', 'pt');
   
   // document.querySelector('.titulo-biometria').textContent = 'Verificação Biométrica (Impressão Digital)';
   // document.querySelector('.comentarioBiometria').textContent = 'Coloque seu dedo no scanner biométrico para fazer o ponto.';
@@ -15,6 +16,7 @@ function translateToEnglishVerificacao() {
   document.querySelector('.titulo-facial').textContent = 'Facial Verification';
   document.querySelector('.comentarioFacial').textContent = 'Position yourself in front of the camera to punch in.';
   document.querySelector('#iniciarFacial').textContent = 'Start Facial Recognition';
+  localStorage.setItem('language', 'en');
   
   // document.querySelector('.titulo-biometria').textContent = 'Biometric Verification (Fingerprint)';
   // document.querySelector('.comentarioBiometria').textContent = 'Place your finger on the biometric scanner to punch in.';
@@ -22,9 +24,14 @@ function translateToEnglishVerificacao() {
 }
 
 //TRADUTOR VERIFICACAO
-
 const botaoTradutorVerificacao = document.getElementById('tradutorVerificacao');
-let atualLinguagemVerificacao = 'en';
+let atualLinguagemVerificacao = localStorage.getItem('language') || 'en';
+
+if (atualLinguagemVerificacao === 'pt') {
+  translateToPortugueseVerificacao();
+} else {
+  translateToEnglishVerificacao();
+}
 
 function traduzirVerificacao() {
   if (atualLinguagemVerificacao === 'en') {

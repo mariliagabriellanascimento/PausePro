@@ -3,7 +3,6 @@ const botaoLogin = document.querySelector("#botaoLogar");
 const loginForm = document.querySelector("#login-form");
 const errorMessage = document.querySelector("#error-message");
 
-
 function logar(validando) {
     validando.preventDefault();
 
@@ -62,8 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //TRADUCAO LOGIN
 function translateToPortugueseLogin() {
-
-    document.querySelector('h1').textContent = 'Login do Funcionário';
+    document.querySelector('.tituloemployeeLogin').textContent = 'Login do Funcionário';
     document.querySelector('label[for="employeeId"]').textContent = 'ID do Funcionário:';
     document.querySelector('input#employeeId').placeholder = 'Entre com seu ID do Funcionário';
     document.querySelector('label[for="password"]').textContent = 'Senha:';
@@ -77,32 +75,38 @@ function translateToPortugueseLogin() {
     carrosselTexts[2].textContent = 'Fique no horário, mantenha o controle.';
     carrosselTexts[3].textContent = 'Transformando o ponto de entrada em eficiência.';
     carrosselTexts[4].textContent = 'Seu tempo importa, faça cada segundo valer.';
-
+    localStorage.setItem('language', 'pt');
 }
 
 function translateToEnglishLogin() {
-
-    document.querySelector('h1').textContent = 'Employee Login';
+    document.querySelector('.tituloemployeeLogin').textContent = 'Employee Login';
     document.querySelector('label[for="employeeId"]').textContent = 'Employee ID:';
     document.querySelector('input#employeeId').placeholder = 'Enter your employee ID'; 
     document.querySelector('label[for="password"]').textContent = 'Password:';
     document.querySelector('input#password').placeholder = 'Enter your password'; 
     document.querySelector('button#botaoLogar').textContent = 'Login';
     document.querySelector('div[id="error-message"]').textContent = 'Please fill out this field.';
-
+    
     const carrosselTexts = document.querySelectorAll('.item-carrossel-login p');
     carrosselTexts[0].textContent = 'Empowering your workday, one check-in at a time.';
     carrosselTexts[1].textContent = 'Seamless tracking for a more productive you.';
     carrosselTexts[2].textContent = 'Stay on time, stay in control.';
     carrosselTexts[3].textContent = 'Transforming attendance into efficiency.';
     carrosselTexts[4].textContent = 'Your time matters, make every second count.';
+    localStorage.setItem('language', 'en');
 }
 
 //TRADUTOR LOGIN
 const botaoTradutorLogin = document.getElementById('tradutorLogin');
-let atualLinguagemLogin = 'en';
+let atualLinguagemLogin = localStorage.getItem('language') || 'en';
 
-function traduzirLogin() {
+if (atualLinguagemLogin === 'pt') {
+    translateToPortugueseLogin();
+} else {
+    translateToEnglishLogin();
+}
+
+botaoTradutorLogin.addEventListener('click', function() {
     if (atualLinguagemLogin === 'en') {
         atualLinguagemLogin = 'pt';
         document.documentElement.lang = 'pt';
@@ -112,6 +116,4 @@ function traduzirLogin() {
         document.documentElement.lang = 'en';
         translateToEnglishLogin();
     }
-};
-
-botaoTradutorLogin.addEventListener('click', traduzirLogin);
+});

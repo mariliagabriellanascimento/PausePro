@@ -63,6 +63,8 @@ function translateToPortugueseRelatorios() {
     document.querySelectorAll('.links-rodape a')[0].textContent = 'Política de Privacidade';
     document.querySelectorAll('.links-rodape a')[1].textContent = 'Termos de Uso';
     document.querySelector('.conteudo-rodape p:nth-child(3)').textContent = 'Desenvolvido por Verdinhos';
+    localStorage.setItem('language', 'pt');
+
   }
   
   function translateToEnglishRelatorios() {
@@ -105,11 +107,19 @@ function translateToPortugueseRelatorios() {
     document.querySelectorAll('.links-rodape a')[0].textContent = 'Privacy Policy';
     document.querySelectorAll('.links-rodape a')[1].textContent = 'Terms of Use';
     document.querySelector('.conteudo-rodape p:nth-child(3)').textContent = 'Developed by Verdinhos';
+    localStorage.setItem('language', 'en');
+
   }
   
 //TRADUTOR RELATORIOS
 const botaoTradutorRelatorios = document.getElementById('tradutordashboardRelatorios');
-let atualLinguagemRelatorios = 'en';
+let atualLinguagemRelatorios = localStorage.getItem('language') || 'en';
+
+if (atualLinguagemRelatorios === 'pt') {
+  translateToPortugueseRelatorios();
+} else {
+  translateToEnglishRelatorios();
+}
 
 function traduzirRelatorios() {
   if (atualLinguagemRelatorios === 'en') {

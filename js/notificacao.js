@@ -12,6 +12,7 @@ function translateToPortugueseAlertas() {
   document.querySelectorAll('.links-rodape a')[0].textContent = 'Política de Privacidade';
   document.querySelectorAll('.links-rodape a')[1].textContent = 'Termos de Uso';
   document.querySelector('.conteudo-rodape p:nth-child(3)').textContent = 'Desenvolvido por Verdinhos';
+  localStorage.setItem('language', 'pt');
 
 }
 
@@ -28,22 +29,29 @@ function translateToEnglishAlertas() {
   document.querySelectorAll('.links-rodape a')[0].textContent = 'Privacy Policy';
   document.querySelectorAll('.links-rodape a')[1].textContent = 'Terms of Use';
   document.querySelector('.conteudo-rodape p:nth-child(3)').textContent = 'Developed by Verdinhos';
+  localStorage.setItem('language', 'en');
 }
 
 //TRADUTOR NOTIFICACAO
-const translationButton = document.getElementById('tradutordashboardAlertas');
-let currentLanguageAlertas = 'en';
+const botaoTradutorAlertas = document.getElementById('tradutordashboardAlertas');
+let atualLinguagemAlertas = localStorage.getItem('language') || 'en';
+
+if (atualLinguagemAlertas === 'pt') {
+  translateToPortugueseAlertas();
+} else {
+  translateToEnglishAlertas();
+}
 
 function traduzirAlertas() {
-  if (currentLanguageAlertas === 'en') {
-      currentLanguageAlertas = 'pt';
+  if (atualLinguagemAlertas === 'en') {
+    atualLinguagemAlertas = 'pt';
       document.documentElement.lang = 'pt';
       translateToPortugueseAlertas();
   } else {
-      currentLanguageAlertas = 'en';
+      atualLinguagemAlertas = 'en';
       document.documentElement.lang = 'en';
       translateToEnglishAlertas();
   }
 }
 
-translationButton.addEventListener('click', traduzirAlertas);
+botaoTradutorAlertas.addEventListener('click', traduzirAlertas);
