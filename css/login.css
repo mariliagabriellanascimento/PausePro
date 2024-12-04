@@ -5,7 +5,7 @@
     height: 100vh;
 }
 
-.sub-principal-container {
+.login-sub-principal-container {
     display: flex;
     align-items: center;
     margin: 10px;
@@ -59,7 +59,7 @@
     background-color: #252ED9;
 }
 
-/* Carrossel */
+/* CARROSSEL */
 .carrossel-login {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -133,6 +133,10 @@
     right: 10px;
 }
 
+.imagens-carrossel-login {
+    box-shadow: 0 4px 20px #D9D9D9;
+}
+
 #logo-pp {
     border-radius: 6px;
     margin-bottom: 10px;
@@ -140,10 +144,6 @@
 
 .login-logo {
     text-align: center;
-}
-
-.imagens-carrossel-login {
-    box-shadow: 0 4px 20px #D9D9D9;
 }
 
 .titles-label {
@@ -154,6 +154,8 @@
     font-size: 16px;
 }
 
+
+/* TRADUTOR */
 #tradutorLogin {
     position: absolute;
     top: 16px;
@@ -166,12 +168,11 @@
     transform: scale(1.1);
 }
 
-
 /* Responsividade: Ajustes para telas menores */
 
 /* Para telas de tablet (largura menor que 768px) */
 @media (max-width: 768px) {
-    .sub-principal-container {
+    .login-sub-principal-container {
         flex-direction: column;
         align-items: center;
     }

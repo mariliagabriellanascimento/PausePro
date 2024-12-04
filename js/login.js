@@ -1,6 +1,6 @@
 //LOGIN
 const botaoLogin = document.querySelector("#botaoLogar");
-const loginForm = document.querySelector("#loginForm");
+const loginForm = document.querySelector("#login-form");
 const errorMessage = document.querySelector("#error-message");
 
 
@@ -12,7 +12,7 @@ function logar(validando) {
 
     if (employeeId.checkValidity() && password.checkValidity()) {
         errorMessage.style.display = 'none';
-        window.location.href = "./pags/logado.html";
+        window.location.href = "logado.html";
     } else {
         errorMessage.style.display = 'block';
     }

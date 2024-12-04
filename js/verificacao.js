@@ -5,9 +5,9 @@ function translateToPortugueseVerificacao() {
   document.querySelector('.comentarioFacial').textContent = 'Posicione-se em frente à câmera para fazer o ponto.';
   document.querySelector('#iniciarFacial').textContent = 'Iniciar Reconhecimento Facial';
   
-  document.querySelector('.titulo-biometria').textContent = 'Verificação Biométrica (Impressão Digital)';
-  document.querySelector('.comentarioBiometria').textContent = 'Coloque seu dedo no scanner biométrico para fazer o ponto.';
-  document.querySelector('#iniciarBiometria').textContent = 'Iniciar Leitura Biométrica';
+  // document.querySelector('.titulo-biometria').textContent = 'Verificação Biométrica (Impressão Digital)';
+  // document.querySelector('.comentarioBiometria').textContent = 'Coloque seu dedo no scanner biométrico para fazer o ponto.';
+  // document.querySelector('#iniciarBiometria').textContent = 'Iniciar Leitura Biométrica';
 }
 
 function translateToEnglishVerificacao() {
@@ -16,9 +16,9 @@ function translateToEnglishVerificacao() {
   document.querySelector('.comentarioFacial').textContent = 'Position yourself in front of the camera to punch in.';
   document.querySelector('#iniciarFacial').textContent = 'Start Facial Recognition';
   
-  document.querySelector('.titulo-biometria').textContent = 'Biometric Verification (Fingerprint)';
-  document.querySelector('.comentarioBiometria').textContent = 'Place your finger on the biometric scanner to punch in.';
-  document.querySelector('#iniciarBiometria').textContent = 'Start Biometric Scan';
+  // document.querySelector('.titulo-biometria').textContent = 'Biometric Verification (Fingerprint)';
+  // document.querySelector('.comentarioBiometria').textContent = 'Place your finger on the biometric scanner to punch in.';
+  // document.querySelector('#iniciarBiometria').textContent = 'Start Biometric Scan';
 }
 
 //TRADUTOR VERIFICACAO
