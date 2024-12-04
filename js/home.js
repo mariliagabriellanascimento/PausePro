@@ -11,7 +11,7 @@ function translateToPortugueseHome() {
   const statusPontos = document.querySelectorAll('.ponto-status p');
   statusPontos[0].innerHTML = '<strong>Hora de Entrada:</strong> 08:00 AM';
   statusPontos[1].innerHTML = '<strong>Status:</strong> Em Expediente';
-  statusPontos[2].innerHTML = '<strong>Horas Trabalhadas:</strong> <span id="horasTrabalhadas">4h 30m</span>';
+  statusPontos[2].innerHTML = '<strong>Horas Trabalhadas:</strong> <span id="horasTrabalhadas">1m</span>';
   
   document.querySelector('#botaoPausar').textContent = 'Pausar';
   document.querySelector('#botaoRetomar').textContent = 'Retomar';
@@ -59,7 +59,7 @@ function translateToEnglishHome() {
   const statusPontos = document.querySelectorAll('.ponto-status p');
   statusPontos[0].innerHTML = '<strong>Entry Time:</strong> 08:00 AM';
   statusPontos[1].innerHTML = '<strong>Status:</strong> At Work';
-  statusPontos[2].innerHTML = '<strong>Hours Worked:</strong> <span id="horasTrabalhadas">4h 30m</span>';
+  statusPontos[2].innerHTML = '<strong>Hours Worked:</strong> <span id="horasTrabalhadas">1m</span>';
   
   document.querySelector('#botaoPausar').textContent = 'Pause';
   document.querySelector('#botaoRetomar').textContent = 'Resume';

@@ -146,13 +146,31 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 999;
 }
 
 #tradutordashboardHome {
     width: 28px; 
     height: 28px;
     color: #FFFFFF;
+}
+
+/* HAMBURGUER */
+.pos-f-t {
+    display: none; 
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.pos-f-t span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
 }
 
 /* Ajustes responsivos para telas menores */
@@ -165,6 +183,37 @@
         box-sizing: border-box;
     }
 
+    .nav-menu {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .nav-menu.open {
+        display: block;
+    }
+
+    #navbarToggleExternalContent h5 {
+        font-size: 1rem; 
+        font-weight: normal; 
+        margin-bottom: 10px; 
+    }
+
+    .bg-dark.p-4 a {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    .bg-dark.p-4 a:first-child {
+        margin-top: 15px;
+    }
+
+    
     .titulo-home {
         font-size: 36px;
     }
@@ -215,6 +264,12 @@
     .botaoPonto:hover:enabled {
         background-color: #0056b3; 
     }
+
+    /* HAMBURGUER */
+    .pos-f-t {
+        display: block; 
+    }
+
 }
 
 /* Responsividade */

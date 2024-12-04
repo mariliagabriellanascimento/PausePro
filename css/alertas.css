@@ -83,7 +83,6 @@
 }
 
 /* TRADUTOR */
-
 #estiloTradutorDashboardAlertas {
   position: absolute;
   top: 130px;
@@ -96,11 +95,27 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 999;
 }
 
 #tradutordashboardAlertas {
   width: 28px; 
   height: 28px;
   color: #FFFFFF;
+}
+
+@media (max-width: 768px){
+  .container-alertas{
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+  }
+  .titulo-alertas{
+      font-size: 36px;
+  }
+  .secao-alertas h2{
+      font-size: 20px;
+  }
 }

@@ -38,6 +38,7 @@ function translateToPortugueseCadastro() {
 
 function translateToEnglishCadastro() {
     document.querySelector('.tituloemployeeRegistration').textContent = 'Employee Registration';
+    document.querySelector('label[for="employeeName"]').textContent = 'Employee Name:';
     document.querySelector('input#employeeName').placeholder = 'Enter your name';
     document.querySelector('label[for="employeeId"]').textContent = 'Employee ID:';
     document.querySelector('input#employeeId').placeholder = 'Enter your employee ID';
