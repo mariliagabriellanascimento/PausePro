@@ -1,6 +1,5 @@
-// MODAIS
-// MODAL INICIAR
-
+// MODAIS + CONTADOR 
+//CONTADOR
 function atualizarContador() {
     const contador = document.getElementById("contador-notificacao");
     let valorAtual = parseInt(contador.textContent);
@@ -8,6 +7,7 @@ function atualizarContador() {
     contador.textContent = valorAtual + 1;
 }
 
+// MODAL INICIAR
 function abrirModalInicio() {
     document.getElementById("modalIniciar").style.display = "block";
 }
@@ -18,7 +18,6 @@ function fecharModalInicio() {
 
 function confirmarIniciar() {
     window.location.href = "verificacao.html";
-   
 }
 
 document.getElementById("botaoIniciar")?.addEventListener("click", abrirModalInicio);

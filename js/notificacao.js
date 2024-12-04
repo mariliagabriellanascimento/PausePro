@@ -4,7 +4,7 @@ function translateToPortugueseAlertas() {
   document.querySelector('div#ponto-status').textContent = 'Último ponto: 08:00 AM';
 
   const navLinks = document.querySelectorAll('.links-nav');
-  navLinks[0].textContent = 'INÍCIO';
+  navLinks[0].textContent = 'HOME';
   navLinks[1].textContent = 'HISTÓRICO DE PONTOS';
   navLinks[2].textContent = 'RELATÓRIOS';
 

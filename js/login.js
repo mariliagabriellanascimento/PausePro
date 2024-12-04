@@ -117,3 +117,43 @@ botaoTradutorLogin.addEventListener('click', function() {
         translateToEnglishLogin();
     }
 });
+
+//LOGIN INTEGRANDO BACK-END
+// document.getElementById("botaoLogar").addEventListener("click", function(eventoLogando) {
+//     eventoLogando.preventDefault();
+
+//     const employeeId = document.getElementById("employeeId").value;
+//     const password = document.getElementById("password").value;
+
+//     if (!employeeId || !password) {
+//         document.getElementById("error-message").style.display = 'block';
+//         return;
+//     }
+
+//     const loginData = {
+//         employeeId: employeeId,
+//         password: password
+//     };
+
+//     fetch('/api/login', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(loginData)
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         if (data.success) {
+//             window.location.href = '/home'; 
+//         } else {
+//             document.getElementById("error-message").textContent = data.message;
+//             document.getElementById("error-message").style.display = 'block';
+//         }
+//     })
+//     .catch(error => {
+//         console.error('Error during login:', error);
+//         document.getElementById("error-message").textContent = 'Something went wrong, please try again later.';
+//         document.getElementById("error-message").style.display = 'block';
+//     });
+// });

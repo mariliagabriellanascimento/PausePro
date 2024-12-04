@@ -1,4 +1,4 @@
-//CADASTRO
+// CADASTRO
 const botaoCadastrar = document.querySelector("#botaoCadastrar");
 const cadastroForm = document.querySelector("#cadastro-form");
 const errorMessage = document.querySelector("#error-message");
@@ -72,3 +72,51 @@ function traduzirCadastro() {
 }
 
 botaoTradutorCadastro.addEventListener('click', traduzirCadastro);
+
+//CADASTRO INTEGRANDO BACK-END
+// document.getElementById("botaoCadastrar").addEventListener("click", function(eventoCadastrar) {
+//     eventoCadastrar.preventDefault();
+
+//     const employeeName = document.getElementById("employeeName").value;
+//     const employeeId = document.getElementById("employeeId").value;
+//     const password = document.getElementById("password").value;
+    
+//     if (!employeeName || !employeeId || !password) {
+//         document.getElementById("error-message").style.display = "block"; 
+//         return;
+//     }
+
+//     document.getElementById("error-message").style.display = "none";
+    
+//     const data = {
+//         name: employeeName,
+//         employee_id: employeeId,
+//         password: password
+//     };
+
+//     fetch('http://localhost:5000/api/registrar', { 
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(data),
+//     })
+//     .then(response => response.json()) 
+//     .then(data => {
+//         console.log('Success:', data);
+//         if (data.success) {
+            
+//             window.location.href = "login.html";
+//         } else {
+            
+//             document.getElementById("error-message").style.display = "block";
+//             document.getElementById("error-message").innerText = data.message;
+//         }
+//     })
+//     .catch((error) => {
+//         console.error('Error:', error);
+
+//         document.getElementById("error-message").style.display = "block";
+//         document.getElementById("error-message").innerText = "An error occurred. Please try again later.";
+//     });
+// });
